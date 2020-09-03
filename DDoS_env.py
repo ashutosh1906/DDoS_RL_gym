@@ -21,6 +21,7 @@ class cyberEnv(gym.Env):
         self.loss_delayed_benign_traffic = 0
         self.ob = 0
 
+    #################### This function takes input from Dr. Qi ################################
     def attack_mode(self):
         ############### Test Modeules ####################
         for i in range(101):
@@ -104,8 +105,7 @@ class cyberEnv(gym.Env):
         # print(global_settings.traffic_dist_risk_scores)
         # print("Traffic Drop %s --> Obsv ID %s"%(self.automated_traffic_drop,current_obsv))
         reward = ((prev_traffic_drop-self.automated_traffic_drop)/global_settings.GB_to_KB)*global_settings.BENIGN_DROP_LOSS\
-                 -(self.automated_traffic_drop/global_settings.GB_to_KB)*global_settings.BENIGN_DROP_LOSS-self.loss_forced_benign_traffic_drop\
-                                                                                                          -self.loss_delayed_benign_traffic
+                 -self.loss_forced_benign_traffic_drop-self.loss_delayed_benign_traffic
         reward /= global_settings.AVG_REWARD
         # print("Reward %s"%(reward))
         done = False

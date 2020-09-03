@@ -1,5 +1,5 @@
 ############## Training Variables ############
-TOTAL_TRAIN_STEPS = 100000
+TOTAL_TRAIN_STEPS = 10000
 SAVE_RESULT_FREQ_DDoS = 1000
 
 ############## LINK Variables ########
@@ -7,8 +7,8 @@ LINK_BANDWIDTH = 10 * 1024 * 1024
 RESOURCE_BANDWIDTH = 1.2 * LINK_BANDWIDTH
 
 GB_to_KB = 1024*1024
-BENIGN_DROP_LOSS = 15000
-BENIGN_DELAY_LOSS = 2500
+BENIGN_DROP_LOSS = 15000 ##### Cost due to Per GB Traffic lost
+BENIGN_DELAY_LOSS = 2500 ###### Cost due to Per GB Traffic Delay
 AVG_REWARD = (RESOURCE_BANDWIDTH/20)*BENIGN_DROP_LOSS
 
 ####### Define global variables ###############
